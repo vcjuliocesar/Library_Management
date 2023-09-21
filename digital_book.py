@@ -2,11 +2,15 @@ from datetime import date
 
 from book import Book
 
-class DigitalBook(Book):
+from bibliographic_material import BibliographicMaterial
+
+class DigitalBook(Book,BibliographicMaterial):
     
-    def __init__(self, title: str, author: str, published_year: date,format:str) -> None:
+    def __init__(self, title: str, author: str, published_year: date,topic: str,format: str) -> None:
         
-        super().__init__(title, author, published_year)
+        Book.__init__(self,title, author, published_year)
+        
+        BibliographicMaterial.__init__(self,topic)
         
         self.format = format
         

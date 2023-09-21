@@ -27,3 +27,9 @@ class User:
         book.state = "available"
         
         return f"{book.title} has been returned"
+    
+    def write_review(self,book:PhysicalBook | DigitalBook,review:str):
+        
+        book.rate(review)
+        
+        return f"Your review has been added"

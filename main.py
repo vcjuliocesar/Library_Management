@@ -6,9 +6,9 @@ from user import User
 
 def run():
     
-    pbook = PhysicalBook("Harry Potter and the Philosopher's Stone","J.K. Rowling",1997,"shelving-1","available")
+    pbook = PhysicalBook("Harry Potter and the Philosopher's Stone","J.K. Rowling",1997,"Wizard","shelving-1","available")
     
-    dbook = DigitalBook("The Lord of the Rings","J.R.R. Tolkien",1949,"PDF")
+    dbook = DigitalBook("The Lord of the Rings","J.R.R. Tolkien",1949,"Fantasy ","PDF")
     
     usr = User("Jhon","Doe")
     
@@ -21,6 +21,10 @@ def run():
     print(usr.borrowing(pbook))
     
     print(usr.borrowing(dbook))
+    
+    print(usr.write_review(pbook,"It's a good book"))
+    
+    print(pbook.get_rate())
     
     print(pbook.lend())
     
