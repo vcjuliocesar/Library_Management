@@ -31,3 +31,14 @@ class PhysicalBook(Book,BibliographicMaterial):
         self.state = "available"
         
         return "Book returned successfully"
+    
+    def get_info(self):
+        
+        return f"""
+            Title : {self.title} \n
+            Author : {self.author} \n
+            Published year : {self.published_year} \n
+            Topic: {self.topic} \n
+            Location : {self.location} \n
+            State : {self.state}            
+        """

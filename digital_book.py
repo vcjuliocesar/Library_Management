@@ -17,3 +17,13 @@ class DigitalBook(Book,BibliographicMaterial):
     def download(self):
         
         return f"Download book: {self.title} ..."
+    
+    def get_info(self):
+        
+        return f"""
+            Title : {self.title} \n
+            Author : {self.author} \n
+            Published year : {self.published_year} \n
+            Topic: {self.topic} \n
+            Format : {self.format} \n 
+        """
