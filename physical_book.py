@@ -1,16 +1,12 @@
 from datetime import date
 
-from book import Book
-
 from bibliographic_material import BibliographicMaterial
 
-class PhysicalBook(Book,BibliographicMaterial):
+class PhysicalBook(BibliographicMaterial):
     
     def __init__(self, title: str, author: str, published_year: date,topic:str,location:str,state:str) -> None:
         
-        Book.__init__(self,title, author, published_year)
-        
-        BibliographicMaterial.__init__(self,topic)
+        super().__init__(title, author, published_year,topic)
         
         self.location = location
         
@@ -32,6 +28,14 @@ class PhysicalBook(Book,BibliographicMaterial):
         
         return "Book returned successfully"
     
+    def rate(self,review:str):
+        
+        self.review = review
+    
+    def get_rate(self):
+        
+        return f"Review : {self.review}"
+    
     def get_info(self):
         
         return f"""
@@ -40,5 +44,5 @@ class PhysicalBook(Book,BibliographicMaterial):
             Published year : {self.published_year} \n
             Topic: {self.topic} \n
             Location : {self.location} \n
-            State : {self.state}            
+            State : {self.state} \n           
         """

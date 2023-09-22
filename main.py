@@ -8,7 +8,7 @@ def run():
     
     pbook = PhysicalBook("Harry Potter and the Philosopher's Stone","J.K. Rowling",1997,"Wizard","shelving-1","available")
     
-    dbook = DigitalBook("The Lord of the Rings","J.R.R. Tolkien",1949,"Fantasy ","PDF")
+    dbook = DigitalBook("The Lord of the Rings","J.R.R. Tolkien",1949,"Fantacy","PDF")
     
     usr = User("Jhon","Doe")
     

@@ -1,22 +1,26 @@
 from datetime import date
 
-from book import Book
-
 from bibliographic_material import BibliographicMaterial
 
-class DigitalBook(Book,BibliographicMaterial):
+class DigitalBook(BibliographicMaterial):
     
-    def __init__(self, title: str, author: str, published_year: date,topic: str,format: str) -> None:
+    def __init__(self, title: str, author: str, published_year: date,topic:str,format: str) -> None:
         
-        Book.__init__(self,title, author, published_year)
-        
-        BibliographicMaterial.__init__(self,topic)
+        super().__init__(title, author, published_year,topic)
         
         self.format = format
         
     def download(self):
         
         return f"Download book: {self.title} ..."
+    
+    def rate(self,review:str):
+        
+        self.review = review
+    
+    def get_rate(self):
+        
+        return f"Review : {self.review}"
     
     def get_info(self):
         
